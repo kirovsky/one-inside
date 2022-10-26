@@ -1,0 +1,66 @@
+@use "./variables" as var;
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-l-styles {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+%flex {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  align-items: center;
+  margin-bottom: var.$margin-sec;
+
+  @include tablet-styles {
+    display: block;
+    width: 90%;
+  }
+}
+
+%medium-head {
+  font-size: var.$font-size-medium;
+  color: var.$third-color;
+  margin-bottom: var.$margin-base;
+
+  @include tablet-styles {
+    font-size: var.$font-size-large;
+  }
+}
+
+%p-content {
+  font-size: var.$font-size-base;
+  color: var.$sec-color;
+
+  @include tablet-styles {
+    font-size: var.$font-size-medium;
+  }
+
+  @include mobile-l-styles {
+    font-size: var.$font-size-large;
+  }
+}
+
+%underline {
+  text-decoration: underline;
+  text-decoration-color: var.$base-color;
+  text-underline-offset: 20%;
+}
+
+%head {
+  font-size: var.$font-size-large;
+  color: var.$third-color;
+  margin-bottom: var.$margin-base;
+}
+
+%img-text {
+  width: var.$width;
+}

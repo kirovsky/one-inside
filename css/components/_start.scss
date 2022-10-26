@@ -1,0 +1,122 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.anderen {
+  width: 40%;
+  margin-left: 15%;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .head {
+    font-size: 3vw;
+    color: #1a1a1a;
+    margin-bottom: 3%;
+    @extend %underline;
+  }
+
+  p {
+    @extend %p-content;
+    margin-bottom: var.$margin-sec;
+  }
+}
+
+.second-container {
+  @extend %flex;
+  div {
+    @extend %img-text;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 2%;
+
+      br {
+        display: none;
+      }
+    }
+
+    .first-head {
+      @extend %medium-head;
+
+      .head-inner {
+        @extend %underline;
+      }
+    }
+
+    .sec-content {
+      @extend %p-content;
+      margin-bottom: var.$margin-sec;
+
+      @media (max-width: 768px) {
+        margin-bottom: var.$margin-base;
+      }
+
+      i {
+        margin-right: 2%;
+      }
+    }
+  }
+}
+
+.third-container {
+  display: flex;
+  width: 55%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var.$margin-sec;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  .third-cont-inner {
+    width: 45%;
+    margin-right: 2%;
+
+    .first-head {
+      @extend %medium-head;
+
+      .head-inner {
+        @extend %underline;
+      }
+    }
+
+    .sec-content {
+      @extend %p-content;
+      margin-bottom: var.$margin-sec;
+
+      i {
+        margin-right: 2%;
+      }
+    }
+  }
+
+  .third-cont-img {
+    width: 55%;
+  }
+}
+
+.left-margin {
+  width: 50%;
+
+  .third-cont-inner {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+.forth-container {
+  .third-cont-img {
+    width: 35%;
+  }
+
+  .third-cont-inner {
+    width: 55%;
+    margin-right: 0%;
+    margin-left: var.$margin-base;
+  }
+}

@@ -1,0 +1,96 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.fokustemen {
+  margin-left: 20%;
+  margin-top: 5%;
+  @extend %medium-head;
+  text-decoration: underline #0069a3;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.focus {
+  @extend %flex, %p-content;
+  align-items: normal;
+  padding: 3% 0 5% 0;
+  color: #ffffff;
+
+  i {
+    border: 1px solid white;
+    padding: 2%;
+    border-radius: 30px;
+    margin-top: 2%;
+    color: #ffffff;
+    font-size: 0.5vw;
+    transition: background 0.5s 0s ease;
+
+    @media (max-width: 768px) {
+      font-size: 1.5vw;
+    }
+  }
+
+  .third-focus:hover i,
+  .sec-focus:hover i,
+  .test-focus:hover i {
+    background-color: #0069a3;
+  }
+
+  .focus-flex {
+    display: flex;
+    justify-content: space-between;
+
+    .sec-focus {
+      background: #99294b;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+      margin-right: 4%;
+
+      .focus-inner-content {
+        margin-top: 2%;
+      }
+    }
+
+    .third-focus {
+      background: #004064;
+    }
+  }
+
+  .focus-content {
+    width: 49%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: var.$margin-base;
+    }
+
+    img,
+    .sec-focus,
+    .third-focus {
+      border-radius: 8px;
+    }
+
+    .sec-focus,
+    .third-focus {
+      padding: 4% 2%;
+    }
+  }
+
+  .test-focus {
+    position: relative;
+    transition: background 0.5s 0s ease;
+
+    .inner-text {
+      position: absolute;
+      top: 80%;
+      left: 5%;
+    }
+  }
+}

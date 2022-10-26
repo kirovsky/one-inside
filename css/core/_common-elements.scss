@@ -1,0 +1,7 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+body {
+  margin: 5% 0;
+  font-family: var.$font-family-base;
+}
